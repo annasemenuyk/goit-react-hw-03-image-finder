@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { toast } from 'react-toastify';
-import './Searchbar.module.css';
+import styles from './Searchbar.module.css';
 
 class Searchbar extends Component {
   state = {
@@ -11,7 +11,7 @@ class Searchbar extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const { searchQuery } = this.state;
+    const { searchQuery } = thistyles.state;
     if (searchQuery.trem() === '') {
       return toast.error('Enter something');
     }
@@ -26,23 +26,19 @@ class Searchbar extends Component {
 
   render() {
     return (
-      <header className="Searchbar">
-        <form className="SearchForm" onSubmit={this.handleSubmit}>
-          <button type="submit" className="SearchForm-button">
-            <BsSearch
-              style={{ width: 20, height: 20 }}
-              className="SSearchForm-button-label"
-            />
+      <header className={styles.Searchbar}>
+        <form className={styles.SearchForm} onSubmit={this.handleSubmit}>
+          <button type="submit" className={styles.SearchForm - button}>
+            <BsSearch style={{ width: 20, height: 20 }} />
           </button>
 
           <input
-            className="SearchForm-input"
-            class="input"
+            className={styles.SearchForm - input}
             type="text"
             value={this.state.searchQuery}
             onChange={this.handleInput}
-            autocomplete="off"
-            autofocus
+            autoComplete="off"
+            autoFocus
             placeholder="Search images and photos"
           />
         </form>
