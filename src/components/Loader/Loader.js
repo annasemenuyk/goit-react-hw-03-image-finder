@@ -1,16 +1,17 @@
-import React from 'react';
-import { BallTriangle } from 'react-loader-spinner';
+import Loader from 'react-loader-spinner';
 import styles from './Loader.module.css';
 
-const Loader = () => {
+const LoaderSpinner = () => {
   return (
-    <BallTriangle
+    <Loader
       className={styles.Loader}
-      color="#00BFFF"
+      type="ThreeDots"
+      color="#000000"
       height={80}
       width={80}
+      timeout={3000}
     />
   );
 };
 
-export default Loader;
+export default LoaderSpinner;

@@ -8,7 +8,7 @@ import Container from './components/Container';
 import Searchbar from './components/Searchbar';
 import ImageGallery from './components/ImageGallery';
 import Button from './components/Button';
-import Loader from './components/Loader';
+import LoaderSpinner from './components/Loader';
 import Modal from './components/Modal';
 
 const Status = {
@@ -88,7 +88,7 @@ class App extends Component {
 
         <ImageGallery images={imagesArray} onOpenModal={this.toggleModal} />
 
-        {status === 'pending' && <Loader />}
+        {status === 'pending' && <LoaderSpinner />}
 
         {imagesArray.length >= 12 && (
           <Button onClickLoadMore={this.handleLoadMoreBtn} />
