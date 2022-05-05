@@ -1,9 +1,13 @@
 import { Component } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import styles from './Searchbar.module.css';
 
 class Searchbar extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
   state = {
     searchQuery: '',
   };
@@ -11,7 +15,7 @@ class Searchbar extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const { searchQuery } = thistyles.state;
+    const { searchQuery } = this.state;
     if (searchQuery.trem() === '') {
       return toast.error('Enter something');
     }
@@ -27,13 +31,13 @@ class Searchbar extends Component {
   render() {
     return (
       <header className={styles.Searchbar}>
-        <form className={styles.SearchForm} onSubmit={this.handleSubmit}>
-          <button type="submit" className={styles.SearchForm - button}>
+        <form className={styles.Form} onSubmit={this.handleSubmit}>
+          <button type="submit" className={styles.Button}>
             <BsSearch style={{ width: 20, height: 20 }} />
           </button>
 
           <input
-            className={styles.SearchForm - input}
+            className={styles.Input}
             type="text"
             value={this.state.searchQuery}
             onChange={this.handleInput}
