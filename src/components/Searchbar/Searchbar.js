@@ -1,13 +1,10 @@
 import { Component } from 'react';
 import { BsSearch } from 'react-icons/bs';
-import PropTypes from 'prop-types';
+
 import { toast } from 'react-toastify';
 import styles from './Searchbar.module.css';
 
 class Searchbar extends Component {
-  static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-  };
   state = {
     searchQuery: '',
   };
@@ -16,16 +13,16 @@ class Searchbar extends Component {
     event.preventDefault();
 
     const { searchQuery } = this.state;
-    if (searchQuery.trem() === '') {
+    if (searchQuery.trim() === '') {
       return toast.error('Enter something');
     }
 
     this.props.onSubmit(searchQuery);
-    this.state({ searchQuery: '' });
+    this.setState({ searchQuery: '' });
   };
 
   handleInput = event => {
-    this.setState({ searchQuery: event.carrentTarget.value.toLowerCase() });
+    this.setState({ searchQuery: event.currentTarget.value.toLowerCase() });
   };
 
   render() {
