@@ -1,10 +1,8 @@
-import React from 'react';
-import { BallTriangle } from 'react-loader-spinner';
-import styles from './Loader.module.css';
-
+import { ThreeDots } from 'react-loader-spinner';
+import styles from './LoaderSpinner.module.css';
 const LoaderSpinner = () => {
   return (
-    <BallTriangle
+    <ThreeDots
       className={styles.Loader}
       color="#00BFFF"
       height={80}
